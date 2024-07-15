@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+ {% if total_answered == 0 %}
+ <h1>Failed Test</h1>
+ <p>You didn't answer any questions!</p>
+ {% else %}
+    {% if correct >= 26 %}
+    <center><h1>Passed Test</h1></center>
+    {% else %}
+    <center><h1>Failed Test</h1></center>
+    {% endif %}
+    <p>You got {{correct}} questions correct out of 35.</p>
+    <p>Your Score: <b>{{ ((correct / 35) * 100) | round (0)}} Percent.</b></p>
+    <p>You must get at least 74% to pass.</p>
+ {% endif %}
+<p>You answered {{total_answered}} questions</p>
+<br />
+<br />
+<div class="actions">
+<button onclick="deleteCookieAndRefresh()" class="end-test">Close This Test</button>
+<script>
+    function deleteCookieAndRefresh() {
+    // Client-side JavaScript to delete the cookie and refresh
+    document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = '/?=new';
+    }
+</script>
+<a href="/">Return Home</a>
+</div>
+{% endblock %}
+

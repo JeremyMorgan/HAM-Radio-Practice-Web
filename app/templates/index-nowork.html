@@ -1,0 +1,22 @@
+<!-- HTML template for the index page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAM Radio Practice Test</title>
+</head>
+<body>
+    <!-- main site content -->
+    <hr />
+    {% block content %}{% endblock %}
+    <hr />
+    <!-- this is for debugging and we'll remove it later-->
+    <h1>Data</h1>
+    <ul>
+        {% for item in data %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

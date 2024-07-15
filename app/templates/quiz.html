@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>{{ question[2] }}</h1>
+    <form method="post">
+        <input type="radio" name="answer" value="{{ question[3] }}">{{ question[3] }}</input><br>
+        <input type="radio" name="answer" value="{{ question[4] }}">{{ question[4] }}</input><br>
+        <input type="radio" name="answer" value="{{ question[5] }}">{{ question[5] }}</input><br>
+        <input type="radio" name="answer" value="{{ question[6] }}">{{ question[6] }}</input><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
